@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Tasks Too late</h2>
+<table>
+    <%= render 'tasks/tableform' %>
+    <tbody>
+        <% @tasts_delay_depassed.each do |task| %>
+        <%= render 'tasks/display', task: task, x: false %>
+        <% end %>
+    </tbody>
+</table>
+<br >
+<h2> Tasks In Progress </h2>
+<table>
+    <%= render 'tasks/tableform' %>
+    <tbody>
+        <% @tasts_current.each do |task| %>
+        <%= render 'tasks/display', task: task %>
+        <% end %>
+    </tbody>
+</table>
+
+<%= link_to 'New Task', new_task_path %>
